@@ -1,0 +1,37 @@
+{
+  "canisters": {
+    "hello12_backend": {
+      "main": "src/hello12_backend/main.mo",
+      "type": "motoko"
+    },
+    "hello12_frontend": {
+      "dependencies": [
+        "hello12_backend"
+      ],
+      "source": [
+        "src/hello12_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "hello12_frontend"
+    },
+    "internet_identity": {
+      "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
+      "frontend": {},
+      "remote": {
+        "id": {
+          "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+        }
+      },
+      "type": "custom",
+      "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
